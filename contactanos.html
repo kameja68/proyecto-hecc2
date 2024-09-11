@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Transporte</title>
+  <style>
+    /* Estilo del menú */
+
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      color: rgb(4, 4, 103);
+
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      float: left;
+      position: relative;
+    }
+
+    nav li a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: rgb(6, 6, 123);
+    }
+
+    nav li:hover>a {
+      text-decoration: underline;
+
+    }
+
+    nav ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-top: none;
+      z-index: 1;
+    }
+
+    nav ul ul li {
+      float: none;
+      position: relative;
+    }
+
+    nav ul ul a {
+      padding: 5px 15px;
+      font-weight: normal;
+      text-decoration: none;
+      color: #333333;
+    }
+
+    nav ul ul a:hover {
+      background-color: #f5f5f5;
+    }
+
+    nav li:hover>ul {
+      display: inherit;
+    }
+
+
+
+
+
+    .row {
+      display: flex;
+      justify-content: center;
+      margin-top: 5%;
+    }
+
+    .col-sm-4,
+    .col-sm-6 {
+      text-align: center;
+    }
+
+    #contacto2 p {
+      margin: 10px 0;
+    }
+
+    #formulario p {
+      margin: 20px 0;
+      margin-left: 20px;
+    }
+
+    #formulario form {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    #formulario .form-group {
+      margin-bottom: 10px;
+    }
+
+    #formulario textarea {
+      resize: vertical;
+    }
+
+
+
+
+
+
+
+
+
+    /*deplieegue  whatsapp*/
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .whatsapp-btn img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /*deplieegue  whatsapp*/
+
+    .logo {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-top: 40px;
+      margin-right: 20px;
+      width: 100px;
+      height: 100px;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav>
+    <div class="logo">
+      <img src="LogoHecc.png" alt="Logo de la empresa">
+    </div>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Servicios</a>
+        <ul>
+          <li><a href="administracioncentros.html">Administración Centros de Correspondencia</a></li>
+          <li><a href="mensajeriaexpresa.html">Mensajería Expresa</a></li>
+          <li><a href="gestiondocumental.html">Gestión Documental</a></li>
+        </ul>
+      </li>
+      <li><a href="acercadenosotros.html">Acerca de</a></li>
+      <li><a href="#">Valores</a>
+        <ul>
+          <li><a href="compromiso.html">Compromiso</a></li>
+          <li><a href="confidencialidad.html">Confidencialidad</a></li>
+          <li><a href="respeto.html">Respeto</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Documentos</a></li>
+      <li><a href="contactanos.html">Contacto</a></li>
+    </ul>
+
+  </nav>
+  <div class="container">
+    <div class="row">
+
+      <div>
+      </div>
+    </div>
+
+
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-1"> </div>
+      <div id="contacto2" class="col-sm-4 text-center">
+        <p class="wow fadeInDown">Contáctate con nosotros</p>
+        <p class="wow fadeInDown"><span class="glyphicon glyphicon-map-marker"></span>Carrera
+          129 #22b-57 int 25</p>
+        <p class="wow fadeInDown"><span class="glyphicon glyphicon-map-marker"></span>Parque
+          Industrial del Occidente, Bogotá, Colombia</p>
+        <p class="wow fadeInDown"><span class="glyphicon glyphicon-phone"></span>
+          +57 318 532 3879</p>
+        <p class="wow fadeInDown"><span class="glyphicon glyphicon-phone-alt"></span>
+          Conmutador 742 35 64 - 742 35 65</p>
+        <p class="wow fadeInDown"><span class="glyphicon glyphicon-envelope"></span>
+          servicioalcliente@hecc.co</p>
+        <li><button type="button" class="btn btn-info"><a id="colorTexto" href="http://181.49.154.246:81/PQR.aspx"
+              target="_blank">
+              <h5>SERVICIO AL CLIENTE</h5>
+            </a></button></li>
+      </div>
+      <div id="formulario" class="col-sm-6 text-center">
+        <p id="contacto2" class="wow fadeInDown"><span class="glyphicon glyphicon-bookmark"></span>
+          Nosotros resolvemos cualquier duda, escribanos: </p>
+        <form action="email/email.php?y=mensaje" method="POST">
+          <div class="row">
+            <div class="col-sm-6 form-group"> <input class="form-control" id="name" name="name" placeholder="Nombre"
+                required="" type="text"> </div>
+            <div class="col-sm-6 form-group"> <input class="form-control" id="email" name="email" placeholder="Email"
+                required="" type="email"> </div>
+          </div>
+          <textarea class="form-control" id="comments" name="message" placeholder="Comentario" rows="5"></textarea><br>
+          <div class="row">
+            <div class="col-sm-12 form-group"> <button class="btn btn-default pull-center" type="submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-1"> </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-1"> </div>
+      <div class="col-sm-10">
+        <div id="map" class="center-block">
+          <script>
+            function initMap() {
+              var uluru = { lat: 4.695374, lng: -74.158541 };
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru
+              });
+              var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+              });
+            }
+
+
+
+
+
+
+            <a href="https://wa.me/3222537029" target="_blank" class="whatsapp-btn">
+              <img src="contactanos3.webp" alt="WhatsApp">
+            </a>
+
+
+
+
+
+</body >
+
+</html >

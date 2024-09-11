@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Transporte</title>
+  <style>
+    /* Estilo del menú */
+
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      color: rgb(4, 4, 103);
+
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      float: left;
+      position: relative;
+    }
+
+    nav li a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: rgb(6, 6, 123);
+    }
+
+    nav li:hover>a {
+      text-decoration: underline;
+    }
+
+    nav ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-top: none;
+      z-index: 1;
+    }
+
+    nav ul ul li {
+      float: none;
+      position: relative;
+    }
+
+    nav ul ul a {
+      padding: 5px 15px;
+      font-weight: normal;
+      text-decoration: none;
+      color: #333333;
+    }
+
+    nav ul ul a:hover {
+      background-color: #f5f5f5;
+    }
+
+    nav li:hover>ul {
+      display: inherit;
+    }
+
+    /*deplieegue  imagenes*/
+    .gallery-container {
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+      margin-top: 100px;
+      /* ajusta la altura a tus necesidades */
+    }
+
+    .gallery {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .arrow span {
+      font-size: 24px;
+      line-height: 0;
+    }
+
+    .arrow-left {
+      left: 20px;
+    }
+
+    .arrow-right {
+      right: 20px;
+    }
+
+    .arrow-left:hover,
+    .arrow-right:hover {
+      background-color: #f5f5f5;
+    }
+
+    .arrow-left:hover span,
+    .arrow-right:hover span {
+      color: #333;
+    }
+
+    #contenedor {
+      position: absolute;
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+      margin-top: 5%;
+    }
+
+    #imagen {
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 80%;
+      height: 50vh;
+      transition: all 0.5s ease-out;
+    }
+
+    #botones {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    button {
+      padding: 10px;
+      margin: 0 10px;
+      font-size: 18px;
+      position: relative;
+    }
+
+
+
+    /*deplieegue  whatsapp*/
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .whatsapp-btn img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /*deplieegue  whatsapp*/
+
+    .logo {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-top: 40px;
+      margin-right: 20px;
+      width: 100px;
+      height: 100px;
+    }
+
+    .logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav>
+    <div class="logo">
+      <img src="LogoHecc.png" alt="Logo de la empresa">
+    </div>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Servicios</a>
+        <ul>
+          <li><a href="administracioncentros.html">Administración Centros de Correspondencia</a></li>
+          <li><a href="mensajeriaexpresa.html">Mensajería Expresa</a></li>
+          <li><a href="gestiondocumental.html">Gestión Documental</a></li>
+        </ul>
+      </li>
+      <li><a href="acercadenosotros.html">Acerca de</a></li>
+
+      <li><a href="#">Valores</a>
+      <ul>
+        <li><a href="compromiso.html">Compromiso</a></li>
+        <li><a href="confidencialidad.html">Confidencialidad</a></li>
+        <li><a href="respeto.html">Respeto</a></li>
+      </ul>
+      <li>
+        
+      <li><a href="#">Documentos</a></li>
+      <li><a href="contactanos.html">Contacto</a></li>
+    </ul>
+
+  </nav>
+
+
+
+
+
+  <div id="contenedor">
+    <img id="imagen" src="portada3.jpg" alt="Imagen 1">
+  </div>
+
+  <div id="botones">
+    <button onclick="cambiarImagen(-1)">←</button>
+    <button onclick="cambiarImagen(1)">→</button>
+  </div>
+
+  <script>
+    let imagen = document.getElementById("imagen");
+    let imagenes = ["portada3.jpg", "portada.jpg", "portada2.jpg", "portada.jpg"];
+    let indice = 0;
+
+    function cambiarImagen(direccion) {
+      indice += direccion;
+      if (indice < 0) {
+        indice = imagenes.length - 1;
+      } else if (indice >= imagenes.length) {
+        indice = 0;
+      }
+      imagen.src = imagenes[indice];
+    }
+  </script>
+
+
+  <a href="https://wa.me/3222537029" target="_blank" class="whatsapp-btn">
+    <img src="contactanos3.webp" alt="WhatsApp">
+  </a>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .contenedor {
+      height: 50vh;
+      /* Altura del 50% del viewport */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contenedor img {
+      max-height: 100%;
+      /* Altura máxima del 100% del contenedor */
+      max-width: 100%;
+      /* Anchura máxima del 100% del contenedor */
+    }
+
+
+    #imagen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 400px;
+      transition: all 0.5s ease-out;
+    }
+
+    #botones {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    button {
+      padding: 10px;
+      margin: 0 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="contenedor">
+    <img id="imagen" src="portada.jpg" alt="Imagen 1">
+  </div>
+
+  <div id="botones">
+    <button onclick="cambiarImagen(-1)">←</button>
+    <button onclick="cambiarImagen(1)">→</button>
+  </div>
+
+  <script>
+    let imagen = document.getElementById("imagen");
+    let imagenes = ["portada.jpg", "portada3.jpg", "portada2.jpg", ".jpg"];
+    let indice = 0;
+
+    function cambiarImagen(direccion) {
+      indice += direccion;
+      if (indice < 0) {
+        indice = imagenes.length - 1;
+      } else if (indice >= imagenes.length) {
+        indice = 0;
+      }
+      imagen.src = imagenes[indice];
+    }
+  </script>
+
+</body>
+
+</html>
